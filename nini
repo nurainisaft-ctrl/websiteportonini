@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Portofolio Nuraini Safitri</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%);
+      color: #4a2b36;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ffe0e8;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f472b6;
+      border-radius: 10px;
+    }
+
+    /* header & navbar */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 245, 248, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      padding: 16px 0;
+      border-bottom: 1px solid #ffccda;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ec489a, #f472b6, #fbcfe8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #831843;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #ec489a;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #be185d;
+    }
+
+    /* hero section pink */
+    .hero {
+      padding: 80px 0 70px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content .badge {
+      background: #fce7f3;
+      color: #be185d;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border: 1px solid #fbcfe8;
+    }
+
+    .hero-content h1 {
+      font-size: 3.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: #4c0519;
+    }
+
+    .hero-content .highlight {
+      background: linear-gradient(120deg, #ec489a, #f472b6, #fb7185);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: #9d174d;
+      max-width: 500px;
+      margin-bottom: 28px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(105deg, #ec489a, #f472b6);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 6px 14px rgba(236, 72, 153, 0.25);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 22px rgba(236, 72, 153, 0.35);
+      background: linear-gradient(105deg, #db2777, #ec489a);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #f9a8d4;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #be185d;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: #ec489a;
+      background: #fff0f5;
+      color: #db2777;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar-placeholder {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(145deg, #ffe0f0, #ffecf2);
+      border-radius: 58% 42% 68% 32% / 42% 50% 50% 58%;
+      box-shadow: 0 25px 40px -12px rgba(236, 72, 153, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: #f472b6;
+      transition: all 0.4s ease;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* section */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 56px;
+      color: #831843;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, #f472b6, #fbcfe8);
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+
+    /* skills grid pink theme */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .skill-card {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      padding: 24px 28px;
+      border-radius: 36px;
+      text-align: center;
+      width: 140px;
+      transition: all 0.3s;
+      border: 1px solid #ffccda;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.02);
+    }
+
+    .skill-card i {
+      font-size: 2.8rem;
+      color: #ec489a;
+      margin-bottom: 12px;
+    }
+
+    .skill-card span {
+      font-weight: 600;
+      color: #831843;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      background: white;
+      border-color: #f9a8d4;
+      box-shadow: 0 20px 28px -12px rgba(236, 72, 153, 0.2);
+    }
+
+    /* project grid pink */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border: 1px solid #ffe0ec;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: #f9a8d4;
+      box-shadow: 0 25px 35px -12px rgba(236, 72, 153, 0.2);
+    }
+
+    .project-img {
+      height: 180px;
+      background: linear-gradient(125deg, #fbcfe8, #fce7f3, #ffe4ed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #ec489a;
+    }
+
+    .project-info {
+      padding: 24px;
+    }
+
+    .project-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #4c0519;
+    }
+
+    .project-info p {
+      color: #9d174d;
+      margin-bottom: 18px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tech-stack span {
+      background: #fce7f3;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #be185d;
+    }
+
+    .project-link {
+      text-decoration: none;
+      font-weight: 700;
+      color: #ec489a;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .project-link:hover {
+      gap: 10px;
+      color: #db2777;
+    }
+
+    /* about - pinky */
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      background: rgba(255, 240, 245, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 48px;
+      padding: 40px;
+      box-shadow: 0 8px 28px rgba(236, 72, 153, 0.08);
+      border: 1px solid #ffccda;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: #9d174d;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #4a2b36;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: white;
+      padding: 28px;
+      border-radius: 36px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+      border: 1px solid #ffccda;
+    }
+
+    .contact-info p {
+      margin: 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #831843;
+      font-weight: 500;
+    }
+
+    .contact-info i {
+      width: 32px;
+      color: #f472b6;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid #ffccda;
+      color: #b0577f;
+      background: #fff8fb;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 22px;
+    }
+
+    .social-links a {
+      color: #db2777;
+      font-size: 1.6rem;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #ec489a;
+      transform: translateY(-4px);
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #fff5f8;
+        padding: 24px 0;
+        gap: 18px;
+        align-items: center;
+        border-radius: 32px;
+        margin-top: 12px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .about-wrapper {
+        flex-direction: column;
+        padding: 28px;
+      }
+      .avatar-placeholder {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">🌸 PORTOFOLIO NURAINI SAFITRI</div>
+      <button class="menu-toggle" id="mobileMenuBtn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#projects">Proyek</a></li>
+	<li><a href="#pengalaman">Pengalaman</a></li>
+        <li><a href="#Kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero pink section -->
+    <section id="home">
+      <div class="container hero">
+        <div class="hero-content">
+          <div class="badge">Environmental Engineer</div>
+          <h1>Halo, Saya <span class="highlight">Nuraini Safitri</span><br>Sarjana Teknik Lingkungan</h1>
+          <p>Seorang pekerja keras dan memiliki semangat belajar yang tinggi!</p>
+          <div class="btn-group">
+            <a href="#projects" class="btn-primary">Tentang Saya <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn-outline">Kontak</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="avatar-placeholder">
+            <i class=""></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills pinky -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">✨ Spesialisasiku ✨</h2>
+        <div class="skills-grid">
+    <div class="skill-card"><i class="fas fa-file-excel" style="color:#1D6F42;"></i><span>Excel</span></div>
+    <div class="skill-card"><i class="fas fa-file-word" style="color:#2B579A;"></i><span>Word</span></div>
+    <div class="skill-card"><i class="fas fa-file-powerpoint" style="color:#D35230;"></i><span>PowerPoint</span></div>
+    <div class="skill-card"><i class="fas fa-palette" style="color:#31A8FF;"></i><span>Photoshop</span></div>
+    <div class="skill-card"><i class="fas fa-drafting-compass" style="color:#E64B00;"></i><span>AutoCAD</span></div>
+    <div class="skill-card"><i class="fas fa-map-marked-alt" style="color:#2C5F8A;"></i><span>ArcGIS</span></div>
+    <div class="skill-card"><i class="fas fa-paint-brush" style="color:#00C4CC;"></i><span>Canva</span></div>
+</div>
+      </div>
+    </section>
+
+    <!-- Projects section dengan vibe pink -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">🌸 Proyek 🌸</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img"><i class="fas fa-notes"></i></div>
+            <div class="project-info">
+              <h3>DESAIN SISTEM PENYALURAN DAN PENGELOLAAN LIMBAH DOMESTIK DI PT PETRO JORDAN ABADI</h3>
+              <p>Analyzing the parameters of wastewater produced by industry, planning calculations for liquid waste processing buildings in the industry, designing wastewater processing buildings up to water bodies that meet quality standards.</p>
+              <div class="tech-stack"><span>Excel</span><span>AutoCAD</span><span>Arcgis</span></div>
+               <a href="https://repository.upnjatim.ac.id/39313" class="project-link">Preview <i class="fas fa-external-link-alt"></i></a>            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img"><i class="fas fa-plankton"></i></div>
+            <div class="project-info">
+              <h3>ANALISIS KOMUNITAS PLANKTON SEBAGAI BIOINDIKATOR KUALITAS PERAIRAN SUNGAI KALI SURABAYA MENGGUNAKAN PCA (PRINCIPAL COMPONENT ANALYSIS)</h3>
+              <p>Conducted a plankton community analysis as a bioindicator of water quality in the Kali Surabaya River using Principal Component Analysis (PCA).Responsibilities included collecting plankton samples, identifying species composition, and analyzing abundance to evaluate ecological conditions.</p>
+              <div class="tech-stack"><span>Microsoft</span><span>PCA</span><span>Analisis</span></div>
+              <a href="https://repository.upnjatim.ac.id/47561/" class="project-link">Preview <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiences -->
+    <section id="pengalaman">
+      <div class="container">
+ <h2 class="section-title">👜 Pengalaman 👜</h2>
+	<div class="projects-grid">
+          <div class="project-card">
+	<div class="project-info">
+              <h3>STAFF MAGANG SHE PT PETRO JORDAN ABADI</h3>
+              <p>Conducting regular inspections of first aid kits and ensuring readiness.
+Preparing and managing Personal Protective Equipment (PPE) for
+employees.
+Compiling and submitting P2HIV (HIV Prevention and Awareness) reports.
+Maintaining safety records and supporting health and safety initiatives.
+Identified potential workplace hazards and provided solution
+recommendations based on preventive approaches and the hierarchy of
+risk control.
+Prepared and compiled UKL–UPL (Environmental Management and
+Monitoring Efforts) reports.
+Prepared and maintained Zero Accident reports to support occupational
+health and safety performance monitoring.
+Delivered safety induction sessions to ensure workers’ compliance with
+occupational health and safety requirements in the operational areas of
+PT Petro Jordan Abadi.</p>
+</div>
+	</div>
+ <div class="project-card">
+	<div class="project-info">
+              <h3>ASISTAN LABORATORIUM KIMIA II UPNVJT</h3>
+              <p>Supported the implementation of Basic Chemistry II laboratory practicums by preparing equipment, chemicals, and experimental
+materials.
+Assisted students in understanding experimental procedures and data
+collection techniques.
+Ensured laboratory safety, proper chemical handling, and waste disposal
+in accordance with laboratory standards.</p>
+
+</div>
+</section>
+
+
+    <!-- About + Contact pink -->
+    <section id="Kontak">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-text">
+            <h3>🍰 Tentang Saya 🍰</h3>
+            <p>Saya adalah lulusan Sarjana Teknik Lingkungan UPNVJT dengan IPK 3,63/4,00. Selama masa studi saya dan pengalaman organisasi, saya terbiasa bekerja secara terstruktur, bertanggung jawab, serta mampu menyesuaikan diri dengan berbagai situasi. Saya memiliki semangat untuk terus belajar dan berkembang serta berkomitmen untum memberikan kontribusi terbaik dalam setiap kesempatan.</p>
+            <p><i class="fas fa-star" style="color:#f472b6;"></i> I'm also Graphic Design Enthusiast!</p>
+          </div>
+          <div class="contact-info">
+            <h3 style="margin-bottom: 20px; color:#be185d;">📮 Kontak</h3>
+            <p><i class="fas fa-envelope"></i> n.urainisaft@gmail.com</p>
+            <p><i class="fab fa-instagram"></i> @n.urainisa</p>
+            <p><i class="fab fa-linkedin"></i> linkedin.com/in/nurainisftr</p>
+           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://instagram.com/n.urainisa"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/6285736026279"><i class="fab fa-phone"></i></a>
+        <a href="https://www.linkedin.com/in/nurainisftr"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>🎀 Designed with <i class="fas fa-heart" style="color:#ec489a;"></i> by Nuraini Safitri — Portofolio 🎀</p>
+      <p style="font-size: 0.8rem; margin-top: 8px;">© 2026 </p>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu toggle smooth
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinksEl = document.getElementById('navLinks');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        navLinksEl.classList.toggle('show');
+        const icon = menuBtn.querySelector('i');
+        if (navLinksEl.classList.contains('show')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
+    // smooth scroll anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (navLinksEl.classList.contains('show')) {
+            navLinksEl.classList.remove('show');
+            const icon = menuBtn.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
